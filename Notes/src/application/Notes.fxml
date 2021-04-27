@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="550.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NotesController">
+   <children>
+      <Text layoutX="221.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notes">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Text>
+      <TableView fx:id="notesTable" layoutX="42.0" layoutY="46.0" prefHeight="137.0" prefWidth="485.0" AnchorPane.bottomAnchor="367.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="46.0">
+        <columns>
+            <TableColumn fx:id="nameColumn" prefWidth="60.0" text="Name" />
+            <TableColumn fx:id="lastnameColumn" prefWidth="71.0" text="Last name" />
+          <TableColumn fx:id="subColumn" prefWidth="61.0" text="Subject" />
+          <TableColumn fx:id="vocColumn" minWidth="0.0" prefWidth="94.0" text="Vocab" />
+            <TableColumn fx:id="notColumn" maxWidth="1.7976931348623157E308" prefWidth="197.0" text="Definition" />
+        </columns>
+      </TableView>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleNew" text="New" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleOpen" text="Open" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSave" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSaveAS" text="Save As" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <GridPane layoutX="133.0" layoutY="183.0" prefHeight="158.0" prefWidth="286.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Subject" GridPane.rowIndex="2" />
+            <Label text="Vocab" GridPane.rowIndex="3" />
+            <Label text="Definition" GridPane.rowIndex="4" />
+            <ComboBox fx:id="cbosubject" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtvocab" promptText="vocab in - format" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtnotes" promptText="brief definition" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Last name" GridPane.rowIndex="1" />
+            <Label text="Name" />
+            <TextField fx:id="txtlastname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtname" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <HBox layoutX="154.0" layoutY="349.0" spacing="5.0">
+         <children>
+            <Button fx:id="btnAjouter" layoutX="206.0" layoutY="387.0" mnemonicParsing="false" onAction="#ajouter" text="Add" />
+            <Button fx:id="btnModifier" layoutX="287.0" layoutY="387.0" mnemonicParsing="false" onAction="#updateEtudian" text="Update" />
+            <Button fx:id="btnEffacer" layoutX="358.0" layoutY="387.0" mnemonicParsing="false" onAction="#deleteNotes" prefHeight="28.0" prefWidth="62.0" text="Delete" />
+            <Button fx:id="btnClear" layoutX="426.0" layoutY="387.0" mnemonicParsing="false" onAction="#clearFields" text="Restart" />
+         </children>
+      </HBox>
+      <TextArea layoutX="80.0" layoutY="414.0" prefHeight="122.0" prefWidth="423.0" promptText="Short sentence on the lesson" />
+      <Label layoutX="218.0" layoutY="377.0" text="Summary">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
