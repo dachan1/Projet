@@ -18,16 +18,19 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Control;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import com.sun.javafx.scene.control.skin.TableViewSkin;
 import javafx.scene.control.Skin;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -97,13 +100,57 @@ public class NotesController implements Initializable {
 	cbosubject.setItems(list);
 	//atribute the variables
 	nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-	//nameColumn.setCellFactory(param->{
-		
-	//});
 	lastnameColumn.setCellValueFactory(new PropertyValueFactory<>("lastname"));
 	subColumn.setCellValueFactory(new PropertyValueFactory<>("subject"));
 	vocColumn.setCellValueFactory(new PropertyValueFactory<>("vocab"));
 	notColumn.setCellValueFactory(new PropertyValueFactory<>("notes"));
+	
+	nameColumn.setCellFactory(param -> {
+        TableCell<Notes, String> cell = new TableCell<>();
+        Text text = new Text();
+        cell.setGraphic(text);
+        cell.setPrefHeight(Control.USE_COMPUTED_SIZE);
+        text.wrappingWidthProperty().bind(nameColumn.widthProperty().subtract(5));
+        text.textProperty().bind(cell.itemProperty());
+        return cell;
+    });
+	lastnameColumn.setCellFactory(param -> {
+        TableCell<Notes, String> cell = new TableCell<>();
+        Text text = new Text();
+        cell.setGraphic(text);
+        cell.setPrefHeight(Control.USE_COMPUTED_SIZE);
+        text.wrappingWidthProperty().bind(lastnameColumn.widthProperty().subtract(5));
+        text.textProperty().bind(cell.itemProperty());
+        return cell;
+    });
+	subColumn.setCellFactory(param -> {
+        TableCell<Notes, String> cell = new TableCell<>();
+        Text text = new Text();
+        cell.setGraphic(text);
+        cell.setPrefHeight(Control.USE_COMPUTED_SIZE);
+        text.wrappingWidthProperty().bind(subColumn.widthProperty().subtract(10));
+        text.textProperty().bind(cell.itemProperty());
+        return cell;
+    });
+	vocColumn.setCellFactory(param -> {
+        TableCell<Notes, String> cell = new TableCell<>();
+        Text text = new Text();
+        cell.setGraphic(text);
+        cell.setPrefHeight(Control.USE_COMPUTED_SIZE);
+        text.wrappingWidthProperty().bind(vocColumn.widthProperty().subtract(5));
+        text.textProperty().bind(cell.itemProperty());
+        return cell;
+    });
+	notColumn.setCellFactory(param -> {
+        TableCell<Notes, String> cell = new TableCell<>();
+        Text text = new Text();
+        cell.setGraphic(text);
+        cell.setPrefHeight(Control.USE_COMPUTED_SIZE);
+        text.wrappingWidthProperty().bind(notColumn.widthProperty().subtract(5));
+        text.textProperty().bind(cell.itemProperty());
+        return cell;
+    });
+
 	
 	notesTable.setItems(notesData);
 	
@@ -277,8 +324,7 @@ public class NotesController implements Initializable {
 					NotesListWrapper wrapper= new NotesListWrapper();
 					wrapper = (NotesListWrapper) um.unmarshal(file);
 					notesData.clear();
-					notesData.addAll(wrapper.getNotesa());
-					System.out.println("made it");
+					notesData.addAll(wrapper.getEtudiants());
 					setNotesFilePath(file);
 					
 					Stage pStage=(Stage)notesTable.getScene().getWindow();
@@ -307,7 +353,7 @@ public class NotesController implements Initializable {
 					Marshaller m = context.createMarshaller();
 					m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 					NotesListWrapper wrapper= new NotesListWrapper();
-					wrapper.setnotes(notesData);
+					wrapper.setEtudiants(notesData);
 					
 					m.marshal(wrapper, file);
 					

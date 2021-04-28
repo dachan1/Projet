@@ -5,33 +5,25 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import javafx.collections.ObservableList;
-
-@XmlRootElement(name="notes")
+@XmlRootElement(name="etudiants")
 public class NotesListWrapper 
 {
-
-private List<Notes> notes;
-@XmlElement(name = "notes")
-
-public List<Notes> getNotesa()
+private List<Notes> etudiants;
+@XmlElement(name = "etudiant")
+public List<Notes> getEtudiants()
 {
-	
-	return notes;
-	
+	return etudiants;
 	
 }
 
-public void setnotes(List<Notes> notes)
+public void setEtudiants(List<Notes> etudiants)
 		{
-	this.notes=notes;
-}
-
-public Notes getClass(ObservableList<Notes> notesData) {
-	return (Notes) notes;
-	
+	this.etudiants=etudiants;
 }
 
 
 
 }
+
+
+
