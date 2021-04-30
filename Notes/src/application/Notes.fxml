@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="550.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NotesController">
+<AnchorPane prefHeight="550.0" prefWidth="550.0" stylesheets="@../../../../../eclipse-workspace1/Etudiant/src/application/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NotesController">
    <children>
       <Text layoutX="221.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notes">
          <font>
@@ -72,10 +72,10 @@
       </GridPane>
       <HBox layoutX="147.0" layoutY="456.0" spacing="5.0">
          <children>
-            <Button fx:id="btnAjouter" layoutX="206.0" layoutY="387.0" mnemonicParsing="false" onAction="#ajouter" text="Add" />
-            <Button fx:id="btnModifier" layoutX="287.0" layoutY="387.0" mnemonicParsing="false" onAction="#updateEtudian" text="Update" />
-            <Button fx:id="btnEffacer" layoutX="358.0" layoutY="387.0" mnemonicParsing="false" onAction="#deleteNotes" prefHeight="28.0" prefWidth="62.0" text="Delete" />
-            <Button fx:id="btnClear" layoutX="426.0" layoutY="387.0" mnemonicParsing="false" onAction="#clearFields" text="Restart" />
+            <Button fx:id="btnAjouter" layoutX="206.0" layoutY="387.0" mnemonicParsing="false" onAction="#ajouter" styleClass="info" text="Add" />
+            <Button fx:id="btnModifier" layoutX="287.0" layoutY="387.0" mnemonicParsing="false" onAction="#updateEtudian" styleClass="success" text="Update" />
+            <Button fx:id="btnEffacer" layoutX="358.0" layoutY="387.0" mnemonicParsing="false" onAction="#deleteNotes" prefHeight="28.0" prefWidth="62.0" styleClass="danger" text="Delete" />
+            <Button fx:id="btnClear" layoutX="426.0" layoutY="387.0" mnemonicParsing="false" onAction="#clearFields" styleClass="warning" text="Restart" />
          </children>
       </HBox>
    </children>

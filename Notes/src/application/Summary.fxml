@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="550.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SummaryController">
+<AnchorPane prefHeight="550.0" prefWidth="550.0" stylesheets="@../../../../../eclipse-workspace1/Etudiant/src/application/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SummaryController">
    <children>
       <Label layoutX="188.0" prefHeight="47.0" prefWidth="174.0" text="Summary">
          <font>
@@ -45,10 +45,10 @@
       </GridPane>
       <HBox layoutX="142.0" layoutY="438.0" spacing="5.0">
          <children>
-            <Button fx:id="btnAjouter1" layoutX="206.0" layoutY="387.0" mnemonicParsing="false" onAction="#ajouter2" text="Add" />
-            <Button fx:id="btnModifier1" layoutX="287.0" layoutY="387.0" mnemonicParsing="false" onAction="#updateEtudian2" text="Update" />
-            <Button fx:id="btnEffacer1" layoutX="358.0" layoutY="387.0" mnemonicParsing="false" onAction="#deleteNotes2" prefHeight="28.0" prefWidth="62.0" text="Delete" />
-            <Button fx:id="btnClear1" layoutX="426.0" layoutY="387.0" mnemonicParsing="false" onAction="#clearFields2" text="Restart" />
+            <Button fx:id="btnAjouter1" layoutX="206.0" layoutY="387.0" mnemonicParsing="false" onAction="#ajouter2" styleClass="info" text="Add" />
+            <Button fx:id="btnModifier1" layoutX="287.0" layoutY="387.0" mnemonicParsing="false" onAction="#updateEtudian2" styleClass="success" text="Update" />
+            <Button fx:id="btnEffacer1" layoutX="358.0" layoutY="387.0" mnemonicParsing="false" onAction="#deleteNotes2" prefHeight="28.0" prefWidth="62.0" styleClass="danger" text="Delete" />
+            <Button fx:id="btnClear1" layoutX="426.0" layoutY="387.0" mnemonicParsing="false" onAction="#clearFields2" styleClass="warning" text="Restart" />
          </children>
       </HBox>
       <MenuBar>
@@ -59,7 +59,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#handleOpen2" text="Open" />
                   <MenuItem mnemonicParsing="false" onAction="#handleSave2" text="Save" />
                   <MenuItem mnemonicParsing="false" onAction="#handleSaveAS2" text="Save As" />
-                  <MenuItem mnemonicParsing="false" text="Notes" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleNotes" text="Notes" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">

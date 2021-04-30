@@ -454,7 +454,7 @@ public class NotesController implements Initializable {
 					Scene scene=new Scene(pane);
 					Stage stage=new Stage();
 					stage.setScene(scene);
-					stage.setTitle("Statistiques");
+					stage.setTitle("Summary");
 					stage.show();
 					
 				} catch (IOException e) {
@@ -466,7 +466,5 @@ public class NotesController implements Initializable {
 				
 			}
 			
-			
-			
-		}
+}
 		 

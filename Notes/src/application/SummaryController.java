@@ -13,7 +13,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -24,6 +26,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -36,6 +39,7 @@ import javafx.scene.control.TableView;
 
 import java.awt.Label;
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -417,6 +421,26 @@ public class SummaryController implements Initializable {
 				saveNotesDatatoFile2(file);
 			}
 		
+			@FXML
+			void handleNotes()
+			{
+				try {
+					FXMLLoader loader = new FXMLLoader(Main.class.getResource("Notes.fxml"));
+					AnchorPane pane=loader.load();
+					Scene scene=new Scene(pane);
+					Stage stage=new Stage();
+					stage.setScene(scene);
+					stage.setTitle("Notes");
+					stage.show();
+					
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			
+			
+			}
 			}
 			
 			
