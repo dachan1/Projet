@@ -30,6 +30,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#handleOpen" text="Open" />
                   <MenuItem mnemonicParsing="false" onAction="#handleSave" text="Save" />
                   <MenuItem mnemonicParsing="false" onAction="#handleSaveAS" text="Save As" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleStats" text="Summary" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
