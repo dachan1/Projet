@@ -452,6 +452,7 @@ public class NotesController implements Initializable {
 					FXMLLoader loader = new FXMLLoader(Main.class.getResource("Summary.fxml"));
 					AnchorPane pane=loader.load();
 					Scene scene=new Scene(pane);
+					scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 					Stage stage=new Stage();
 					stage.setScene(scene);
 					stage.setTitle("Summary");
