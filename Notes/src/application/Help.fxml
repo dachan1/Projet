@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="550.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HelpWindowController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Windows">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleStats" text="Summary" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleNotes" text="Vocabulary" />
+               </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="84.0" layoutY="85.0" prefHeight="38.0" prefWidth="382.0" text="Welcome to the application">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="123.0" prefHeight="29.0" prefWidth="495.0" text="This application is designed to save vocabulary and summaries for any subject. " />
+      <Label layoutX="26.0" layoutY="290.0" prefHeight="19.0" prefWidth="505.0" text="To save your file: find file (in the top right corner) and save as" />
+      <Label layoutX="26.0" layoutY="316.0" prefHeight="19.0" prefWidth="505.0" text="To open your file: find file (in the top right corner) and click open " />
+      <Label layoutX="26.0" layoutY="335.0" prefHeight="29.0" prefWidth="505.0" text="To modify any changes: find file (in the top right corner), click open then save" />
+      <Label layoutX="26.0" layoutY="370.0" prefHeight="19.0" prefWidth="478.0" text="To navigate between the summary and vocabulary click: find window" />
+      <Label layoutX="26.0" layoutY="396.0" prefHeight="18.0" prefWidth="229.0" text="then click summary or vocabulary" />
+      <Label layoutX="120.0" layoutY="181.0" text="Instructions">
+         <font>
+            <Font size="52.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

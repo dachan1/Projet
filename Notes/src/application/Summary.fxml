@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="550.0" stylesheets="@../../../../../eclipse-workspace1/Etudiant/src/application/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SummaryController">
    <children>
-      <Label layoutX="188.0" prefHeight="47.0" prefWidth="174.0" text="Summary">
+      <Label layoutX="198.0" prefHeight="47.0" prefWidth="174.0" text="Summary">
          <font>
             <Font size="39.0" />
          </font>
@@ -59,17 +59,16 @@
                   <MenuItem mnemonicParsing="false" onAction="#handleOpen2" text="Open" />
                   <MenuItem mnemonicParsing="false" onAction="#handleSave2" text="Save" />
                   <MenuItem mnemonicParsing="false" onAction="#handleSaveAS2" text="Save As" />
-                  <MenuItem mnemonicParsing="false" onAction="#handleNotes" text="Notes" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Windows">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem mnemonicParsing="false" onAction="#handleNotes" text="Vocabulary" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#handleHelp" text="About" />
             </items>
           </Menu>
         </menus>

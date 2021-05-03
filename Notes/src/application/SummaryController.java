@@ -438,8 +438,25 @@ public class SummaryController implements Initializable {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+			}
 				
-			
+				@FXML
+				void handleHelp()
+				{
+					try {
+						FXMLLoader loader = new FXMLLoader(Main.class.getResource("Help.fxml"));
+						AnchorPane pane=loader.load();
+						Scene scene=new Scene(pane);
+						scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+						Stage stage=new Stage();
+						stage.setScene(scene);
+						stage.setTitle("Notes");
+						stage.show();
+						
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 			
 			}
 			}
