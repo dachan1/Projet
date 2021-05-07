@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 public class HelpWindowController {
 	
-	@FXML
+	@FXML//method to bring vocab window from help scene
 	void handleNotes()
 	{
 		try {
@@ -20,6 +20,7 @@ public class HelpWindowController {
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			Stage stage=new Stage();
 			stage.setScene(scene);
+			stage.setResizable(false);
 			stage.setTitle("Notes");
 			stage.show();
 			
@@ -32,7 +33,7 @@ public class HelpWindowController {
 		
 	
 	}
-	@FXML
+	@FXML//method to bring Summary window from help window
 	void handleStats()
 	{
 		try {
@@ -42,6 +43,7 @@ public class HelpWindowController {
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			Stage stage=new Stage();
 			stage.setScene(scene);
+			stage.setResizable(false);
 			stage.setTitle("Summary");
 			stage.show();
 			

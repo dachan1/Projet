@@ -17,6 +17,7 @@ public class Main extends Application {
 				Scene scene = new Scene(root);
 				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				primaryStage.setScene(scene);
+				primaryStage.setResizable(false);
 				primaryStage.setTitle("Notes");
 				primaryStage.show();
 			} catch(Exception e) {
@@ -37,6 +38,7 @@ public class Main extends Application {
 				NotesController mainwindowcontroller=loader.getController();
 				mainwindowcontroller.setMain(this);
 				primaryStage.setScene(scene);
+				primaryStage.setResizable(false);
 				primaryStage.setTitle("Notes");
 				primaryStage.show();
 				} catch (IOException e) {
@@ -57,6 +59,7 @@ public class Main extends Application {
 			SummaryController secondwindowcontroller=loader.getController();
 			//secondwindowcontroller.setText(name);
 			primaryStage.setScene(scene);
+			primaryStage.setResizable(false);
 			primaryStage.setTitle("Summary");
 			primaryStage.show();
 			} catch (IOException e) {

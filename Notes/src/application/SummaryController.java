@@ -158,7 +158,7 @@ public class SummaryController implements Initializable {
 	//Mettre à jour l'affichage
 	summaryTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)-> showSummary2(newValue));	
 	}
-	//Ajouter un étudiant
+	//Ajouter un notes
 		@FXML
 		void ajouter2()
 		{
@@ -186,7 +186,7 @@ public class SummaryController implements Initializable {
 			txtsuma.setText("");
 			
 		}
-		public void showSummary2(Summary summary)
+		public void showSummary2(Summary summary)//prend les donnés set les donnés dans le tableaux
 		{
 			if(summary!=null)
 			{
@@ -208,7 +208,7 @@ public class SummaryController implements Initializable {
 				clearFields2();
 			}
 		}
-		@FXML
+		@FXML//méthode pour update les notes
 		public void updateEtudian2()
 		{
 			if(noEmptyInput2())
@@ -222,7 +222,7 @@ public class SummaryController implements Initializable {
 			}
 		}
 			
-			@FXML
+			@FXML// confirmer de "delelete" les notes
 			public void deleteNotes2()
 			{
 				int selectedIndex = summaryTable.getSelectionModel().getSelectedIndex();
@@ -422,7 +422,7 @@ public class SummaryController implements Initializable {
 			}
 		
 			@FXML
-			void handleNotes()
+			void handleNotes()//méthode de appeller la scène notes de la scènesummary
 			{
 				try {
 					FXMLLoader loader = new FXMLLoader(Main.class.getResource("Notes.fxml"));
@@ -431,6 +431,7 @@ public class SummaryController implements Initializable {
 					scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 					Stage stage=new Stage();
 					stage.setScene(scene);
+					stage.setResizable(false);
 					stage.setTitle("Notes");
 					stage.show();
 					
@@ -441,7 +442,7 @@ public class SummaryController implements Initializable {
 			}
 				
 				@FXML
-				void handleHelp()
+				void handleHelp()//méthode de appeler la scnène help de la scène summary
 				{
 					try {
 						FXMLLoader loader = new FXMLLoader(Main.class.getResource("Help.fxml"));
@@ -450,6 +451,7 @@ public class SummaryController implements Initializable {
 						scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 						Stage stage=new Stage();
 						stage.setScene(scene);
+						stage.setResizable(false);
 						stage.setTitle("Notes");
 						stage.show();
 						

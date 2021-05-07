@@ -175,7 +175,7 @@ public class NotesController implements Initializable {
 	//Mettre à jour l'affichage
 	notesTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)-> showNotes(newValue));	
 	}
-	//Ajouter un étudiant
+	//Ajouter un notes
 		@FXML
 		void ajouter()
 		{
@@ -228,7 +228,7 @@ public class NotesController implements Initializable {
 			}
 		}
 		@FXML
-		public void updateEtudian()
+		public void updateEtudian()//method update notes
 		{
 			if(noEmptyInput())
 			{
@@ -243,7 +243,7 @@ public class NotesController implements Initializable {
 		}
 			
 			@FXML
-			public void deleteNotes()
+			public void deleteNotes()//method pour delete notes
 			{
 				int selectedIndex = notesTable.getSelectionModel().getSelectedIndex();
 						if(selectedIndex >=0)
@@ -444,7 +444,7 @@ public class NotesController implements Initializable {
 				}
 				saveNotesDatatoFile(file);
 			}
-			//affihcer les statistiques
+			//affihcer le ficher summary de scene notes
 			@FXML
 			void handleStats()
 			{
@@ -455,6 +455,7 @@ public class NotesController implements Initializable {
 					scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 					Stage stage=new Stage();
 					stage.setScene(scene);
+					stage.setResizable(false);
 					stage.setTitle("Summary");
 					stage.show();
 					
@@ -467,7 +468,7 @@ public class NotesController implements Initializable {
 				
 			}
 			@FXML
-			void handleHelp()
+			void handleHelp()//method d'avoir le ficher help du stage Notes
 			{
 				try {
 					FXMLLoader loader = new FXMLLoader(Main.class.getResource("Help.fxml"));
@@ -475,6 +476,7 @@ public class NotesController implements Initializable {
 					Scene scene=new Scene(pane);
 					scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 					Stage stage=new Stage();
+					stage.setResizable(false);
 					stage.setScene(scene);
 					stage.setTitle("Notes");
 					stage.show();

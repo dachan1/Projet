@@ -7,12 +7,12 @@ public class Notes {
 	 private String vocab;
 	 private String subject;
 	 
-	 
+	//the differnet variables + object of notes 
 	 public Notes()
 	 {
 		 this(null,null,null,null);
 	 }
-
+//creation of object
 	 public Notes(String name, String lastname, String vocab, String notes) {
 			this.name=name;
 			this.lastname=lastname;
@@ -20,7 +20,7 @@ public class Notes {
 			this.notes=notes;
 			this.vocab=vocab;
 		}
-
+//getters and setters
 	public String getName() {
 		return name;
 	}
