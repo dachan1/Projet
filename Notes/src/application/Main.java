@@ -12,23 +12,53 @@ public class Main extends Application {
 	private Stage primaryStage;
 	@Override
 	public void start(Stage primaryStage) {
-			try {
-				AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("Notes.fxml"));
-				Scene scene = new Scene(root);
-				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-				primaryStage.setScene(scene);
-				primaryStage.setResizable(false);
-				primaryStage.setTitle("Notes");
-				primaryStage.show();
-			} catch(Exception e) {
-				e.printStackTrace();
-			}
+			this.primaryStage=primaryStage;
+			mainWindow();
 		}
 	
 	
 	
 	//pour charger la fenêtre principal
 	public void mainWindow()
+	{
+		
+		try {
+			FXMLLoader loader=new FXMLLoader(Main.class.getResource("Help.fxml"));
+			AnchorPane pane = loader.load();
+			Scene scene=new Scene(pane);
+			HelpWindowController mainwindowcontroller=loader.getController();
+			mainwindowcontroller.setMain(this);
+			primaryStage.setScene(scene);
+			primaryStage.setResizable(false);
+			primaryStage.setTitle("Help");
+			primaryStage.show();
+			} catch (IOException e) {
+			// TODO Auto-generated catch blockp
+			e.printStackTrace();
+			}
+	}
+		
+	
+	//pour charger la fenêtre secondaire
+	public void secondWindow()
+	{
+		
+		try {
+			FXMLLoader loader=new FXMLLoader(Main.class.getResource("Summary.fxml"));
+			AnchorPane pane = loader.load();
+			Scene scene=new Scene(pane);
+			SummaryController mainwindowcontroller=loader.getController();
+			mainwindowcontroller.setMain(this);
+			primaryStage.setScene(scene);
+			primaryStage.setResizable(false);
+			primaryStage.setTitle("Summary");
+			primaryStage.show();
+			} catch (IOException e) {
+			// TODO Auto-generated catch blockp
+			e.printStackTrace();
+		}
+		}
+	public void handlenotes()//method d'avoir le ficher help du stage Notes
 	{
 		
 			try {
@@ -45,28 +75,8 @@ public class Main extends Application {
 				// TODO Auto-generated catch blockp
 				e.printStackTrace();
 			}
-			}
-		
+		}
 	
-	//pour charger la fenêtre secondaire
-	public void secondWindow(String name)
-	{
-		
-		try {
-			FXMLLoader loader=new FXMLLoader(Main.class.getResource("Summary.fxml"));
-			AnchorPane pane = loader.load();
-			Scene scene=new Scene(pane);
-			SummaryController secondwindowcontroller=loader.getController();
-			//secondwindowcontroller.setText(name);
-			primaryStage.setScene(scene);
-			primaryStage.setResizable(false);
-			primaryStage.setTitle("Summary");
-			primaryStage.show();
-			} catch (IOException e) {
-			// TODO Auto-generated catch blockp
-			e.printStackTrace();
-		}
-		}
 	
 	public static void main(String[] args) {
 		launch(args);

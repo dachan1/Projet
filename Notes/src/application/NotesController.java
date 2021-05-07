@@ -448,43 +448,14 @@ public class NotesController implements Initializable {
 			@FXML
 			void handleStats()
 			{
-				try {
-					FXMLLoader loader = new FXMLLoader(Main.class.getResource("Summary.fxml"));
-					AnchorPane pane=loader.load();
-					Scene scene=new Scene(pane);
-					scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-					Stage stage=new Stage();
-					stage.setScene(scene);
-					stage.setResizable(false);
-					stage.setTitle("Summary");
-					stage.show();
-					
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+				main.secondWindow();
 				}
 				
 				
-				
-			}
 			@FXML
 			void handleHelp()//method d'avoir le ficher help du stage Notes
 			{
-				try {
-					FXMLLoader loader = new FXMLLoader(Main.class.getResource("Help.fxml"));
-					AnchorPane pane=loader.load();
-					Scene scene=new Scene(pane);
-					scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-					Stage stage=new Stage();
-					stage.setResizable(false);
-					stage.setScene(scene);
-					stage.setTitle("Notes");
-					stage.show();
-					
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				main.mainWindow();
 		
 		}
 }

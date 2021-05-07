@@ -12,8 +12,8 @@
         <menus>
           <Menu mnemonicParsing="false" text="Windows">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#handleStats" text="Summary" />
-                  <MenuItem mnemonicParsing="false" onAction="#handleNotes" text="Vocabulary" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleNotes" text="Summary" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleStats" text="Vocabulary" />
                </items>
           </Menu>
         </menus>
